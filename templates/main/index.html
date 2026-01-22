@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section id="home">
+	<h2>Enhance Your Future With Himalayan IT College</h2>
+	<p>
+		Himalayan IT College provides industry-oriented IT education,
+		hands-on practical training, and globally recognized certifications
+		to prepare students for a successful tech career.
+	</p>
+	<div class="btn">
+		<a href="#" class="blue">Learn More</a>
+		<a href="{{ url_for('courses') }}" class="yellow">Visit Courses</a>
+	</div>
+</section>
+
+<!-- ================= FEATURES SECTION ================= -->
+<section id="features">
+	<h1>Our Key Features</h1>
+	<p>Why students choose Himalayan IT College</p>
+
+	<div class="fea-base">
+		<div class="fea-box">
+			<i class="fas fa-graduation-cap"></i>
+			<h3>Scholarship Facility</h3>
+			<p>
+				Merit-based and need-based scholarships are available
+				for talented and deserving students.
+			</p>
+		</div>
+
+		<div class="fea-box">
+			<i class="fa-solid fa-book-bookmark"></i>
+			<h3>Online & Offline Courses</h3>
+			<p>
+				Learn flexibly through online and offline classes
+				with expert instructors and recorded materials.
+			</p>
+		</div>
+
+		<div class="fea-box">
+			<i class="fas fa-award"></i>
+			<h3>Global Certification</h3>
+			<p>
+				Receive internationally recognized certificates
+				that add strong value to your professional career.
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- ================= COURSES SECTION ================= -->
+<section id="course">
+	<h1>Our Popular Courses</h1>
+	<p>Industry-focused courses designed for real-world skills</p>
+
+	<div class="course-box">
+
+		<div class="courses">
+			<img src="{{ url_for('static', filename='img/c1.jpg') }}" alt="">
+			<div class="details">
+				<span>Updated Regularly</span>
+				<h6>JavaScript for Beginners</h6>
+
+				<div class="star">
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<i class="fa-solid fa-star"></i>
+					<span>(239 Students)</span>
+				</div>
+			</div>
+			<div class="cost">$49.99</div>
+		</div>
+
+	</div>
+</section>
+
+<!-- ================= REGISTRATION SECTION ================= -->
+<section id="registration">
+	<div class="reminder">
+		<p>Start Learning Today</p>
+		<h1>Register to Get Started</h1>
+
+		<div class="time">
+			<div class="date">18 <br> Days</div>
+			<div class="date">23 <br> Hours</div>
+			<div class="date">06 <br> Minutes</div>
+			<div class="date">58 <br> Seconds</div>
+		</div>
+	</div>
+
+	<div class="form">
+		<h3>Create Your Free Account</h3>
+		<input type="text" placeholder="Full Name">
+		<input type="email" placeholder="Email Address">
+		<input type="text" placeholder="Contact Number">
+
+		<div class="btn">
+			<a href="#" class="yellow">Submit</a>
+		</div>
+	</div>
+</section>
+
+<!-- ================= EXPERTS SECTION ================= -->
+<section id="experts">
+	<h1>Our Expert Instructors</h1>
+	<p>Learn from experienced IT professionals</p>
+
+	<div class="expert-box">
+		<div class="profile">
+			<img src="{{ url_for('static', filename='img/pro1.webp') }}" alt="">
+			<h6>Ema Ernik</h6>
+			<p>Python & Algorithms Expert</p>
+			<div class="pro-links">
+				<i class="fab fa-facebook"></i>
+				<i class="fab fa-instagram"></i>
+				<i class="fab fa-linkedin-in"></i>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,159 @@
+{% extends "main/base.html" %}
+
+{% block title %}Admissions{% endblock %}
+
+{% block content %}
+
+<style>
+.admission-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://via.placeholder.com/1200x400') center/cover;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.admission-hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.admission-hero p {
+    font-size: 18px;
+}
+
+.admission-section {
+    margin-top: 40px;
+}
+
+.admission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.admission-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.admission-card:hover {
+    transform: translateY(-6px);
+}
+
+.admission-card h3 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.admission-card p, .admission-card li {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.apply-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #003366;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.apply-btn:hover {
+    background: #002244;
+}
+</style>
+
+<section class="page-section">
+
+    <!-- Hero Section -->
+    <div class="admission-hero">
+        <h2>Admissions Open</h2>
+        <p>Join Himalayan IT College and shape your future with quality education.</p>
+
+        <!-- ✅ WORKING APPLY BUTTON -->
+        <a href="{% url 'apply_now' %}" class="apply-btn">Apply Now</a>
+    </div>
+
+    <!-- Info Section -->
+    <div class="admission-section">
+        <h2 style="text-align:center; color:#003366;">Admission Process</h2>
+
+        <div class="admission-grid">
+
+            <div class="admission-card">
+                <h3>Step 1: Application</h3>
+                <p>Fill out the online or offline admission form with accurate information.</p>
+            </div>
+
+            <div class="admission-card">
+                <h3>Step 2: Document Submission</h3>
+                <p>Submit your academic certificates, ID proof, and photographs.</p>
+            </div>
+
+            <div class="admission-card">
+                <h3>Step 3: Entrance Test</h3>
+                <p>Some programs may require an entrance exam or interview.</p>
+            </div>
+
+            <div class="admission-card">
+                <h3>Step 4: Confirmation</h3>
+                <p>After selection, confirm your seat by paying the required fees.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Requirements Section -->
+    <div class="admission-section">
+        <h2 style="text-align:center; color:#003366;">Eligibility Criteria</h2>
+
+        <div class="admission-grid">
+            <div class="admission-card">
+                <h3>Undergraduate Programs</h3>
+                <ul>
+                    <li>Completed high school</li>
+                    <li>Minimum required GPA</li>
+                    <li>Basic computer knowledge</li>
+                </ul>
+            </div>
+
+            <div class="admission-card">
+                <h3>Postgraduate Programs</h3>
+                <ul>
+                    <li>Bachelor’s degree</li>
+                    <li>Relevant subject background</li>
+                    <li>Entrance exam (if required)</li>
+                </ul>
+            </div>
+
+            <div class="admission-card">
+                <h3>Documents Required</h3>
+                <ul>
+                    <li>Academic transcripts</li>
+                    <li>Citizenship / Passport</li>
+                    <li>Passport-size photos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="admission-section" style="text-align:center;">
+        <h2 style="color:#003366;">Need Help?</h2>
+        <p>Contact our admission office for guidance and support.</p>
+        <a href="{% url 'contact' %}" class="apply-btn">Contact Us</a>
+    </div>
+
+</section>
+
+{% endblock %}

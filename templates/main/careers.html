@@ -1,0 +1,128 @@
+{% extends "main/base.html" %}
+
+{% block title %}Student Careers{% endblock %}
+
+{% block content %}
+
+<style>
+.career-hero {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url('https://via.placeholder.com/1200x400') center/cover;
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.career-hero h2 {
+    font-size: 38px;
+}
+
+.career-section {
+    margin-top: 50px;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.career-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.career-card:hover {
+    transform: translateY(-6px);
+}
+
+.career-card h3 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.career-card p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.apply-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #003366;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.apply-btn:hover {
+    background: #002244;
+}
+</style>
+
+<section class="page-section">
+
+    <!-- HERO -->
+    <div class="career-hero">
+        <h2>Student Career Development</h2>
+        <p>We prepare our students for a successful future with skills, experience, and confidence.</p>
+        <a href="{% url 'apply_now' %}" class="apply-btn">Apply Now</a>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="career-section">
+        <h2 style="text-align:center; color:#003366;">What We Offer</h2>
+
+        <div class="career-grid">
+
+            <div class="career-card">
+                <h3>Internship Programs</h3>
+                <p>Real-world experience with top IT companies and startups.</p>
+            </div>
+
+            <div class="career-card">
+                <h3>Placement Support</h3>
+                <p>Resume building, mock interviews, and job placement assistance.</p>
+            </div>
+
+            <div class="career-card">
+                <h3>Skill Workshops</h3>
+                <p>Hands-on workshops on web development, AI, cybersecurity, and more.</p>
+            </div>
+
+            <div class="career-card">
+                <h3>Industry Projects</h3>
+                <p>Work on real client projects and build a strong portfolio.</p>
+            </div>
+
+            <div class="career-card">
+                <h3>Career Counseling</h3>
+                <p>One-on-one mentorship and career guidance sessions.</p>
+            </div>
+
+            <div class="career-card">
+                <h3>Global Opportunities</h3>
+                <p>International certifications and global exposure programs.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="career-section" style="text-align:center;">
+        <h2 style="color:#003366;">Start Your Career With Us</h2>
+        <p>Join Himalayan IT College and unlock your future.</p>
+        <a href="{% url 'apply_now' %}" class="apply-btn">Apply for Admission</a>
+    </div>
+
+</section>
+
+{% endblock %}

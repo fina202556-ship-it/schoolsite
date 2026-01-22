@@ -1,0 +1,155 @@
+{% extends "main/base.html" %}
+
+{% block title %}Apply Now{% endblock %}
+
+{% block content %}
+
+<style>
+.apply-form {
+    max-width: 650px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.apply-form h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.apply-form .info-box {
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.apply-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.apply-form input, 
+.apply-form textarea, 
+.apply-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.apply-btn {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.apply-btn:hover {
+    background: #0055a5;
+}
+</style>
+
+<div class="apply-form">
+    <h2>Apply Now</h2>
+
+    <!-- Live Date and Time -->
+    <div class="info-box" id="current-datetime">
+        Today: {{ current_date|date:"l, d F Y H:i:s" }}
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Full Name -->
+        <label for="{{ form.full_name.id_for_label }}">Full Name</label>
+        {{ form.full_name }}
+
+        <!-- Email -->
+        <label for="{{ form.email.id_for_label }}">Email</label>
+        {{ form.email }}
+
+        <!-- Phone -->
+        <label for="{{ form.phone.id_for_label }}">Phone</label>
+        {{ form.phone }}
+
+        <!-- Department -->
+        <label for="{{ form.department.id_for_label }}">Department</label>
+        {{ form.department }}
+
+        <!-- Subject -->
+        <label for="{{ form.subject.id_for_label }}">Subject</label>
+        {{ form.subject }}
+
+        <!-- Preferred Date -->
+        <label for="{{ form.preferred_date.id_for_label }}">Preferred Admission Date</label>
+        {{ form.preferred_date }}
+
+        <!-- Photo Upload -->
+        <label for="{{ form.photo.id_for_label }}">Upload Photo</label>
+        {{ form.photo }}
+
+        <!-- Submit Button -->
+        <button type="submit" class="apply-btn">Submit Application</button>
+    </form>
+</div>
+
+<!-- jQuery (for dynamic subjects) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Dynamic Subject based on Department -->
+<script>
+$('#id_department').change(function(){
+    var url = "{% url 'ajax_load_subjects' %}";
+    var departmentId = $(this).val();
+    $.ajax({
+        url: url,
+        data: {
+            'department': departmentId
+        },
+        success: function(data){
+            $("#id_subject").html('');
+            $("#id_subject").append('<option value="">Select subject</option>');
+            data.forEach(function(subject){
+                $("#id_subject").append('<option value="'+subject.id+'">'+subject.name+'</option>');
+            });
+        }
+    });
+});
+</script>
+
+<!-- Live Date & Time -->
+<script>
+function updateTime() {
+    const now = new Date();
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const day = days[now.getDay()];
+    const date = now.getDate().toString().padStart(2,'0');
+    const month = now.toLocaleString('default', { month: 'long' });
+    const year = now.getFullYear();
+    const hours = now.getHours().toString().padStart(2,'0');
+    const minutes = now.getMinutes().toString().padStart(2,'0');
+    const seconds = now.getSeconds().toString().padStart(2,'0');
+
+    document.getElementById('current-datetime').innerText =
+        `Today: ${day}, ${date} ${month} ${year} ${hours}:${minutes}:${seconds}`;
+}
+setInterval(updateTime, 1000);
+updateTime(); // initialize immediately
+</script>
+
+{% endblock %}
