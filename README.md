@@ -1,0 +1,2 @@
+# schoolsite
+Django admission system
