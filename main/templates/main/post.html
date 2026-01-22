@@ -1,0 +1,52 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Single Post{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Post body starts -->
+<div id="blog-container">
+  <div class="blogs blogpost">
+    <div class="post">
+      <img src="{% static 'img/b1.jpg' %}" alt="">
+
+      <h3>Learn Web Development In the Easiest Way</h3>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio enim, hic vel, animi facere ipsum.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum magni, sint fugiat quo natus consectetur et suscipit fuga sapiente.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ullam cum beatae, explicabo officia eligendi doloremque.
+      </p>
+
+      <br>
+      <a href="#">Read Next</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("menu-btn")?.addEventListener("click", function(){
+  document.querySelector("nav .navigation ul")?.classList.add("active");
+});
+
+document.getElementById("menu-close")?.addEventListener("click", function(){
+  document.querySelector("nav .navigation ul")?.classList.remove("active");
+});
+</script>
+
+{% endblock %}

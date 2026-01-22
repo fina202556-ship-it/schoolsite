@@ -1,0 +1,83 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Blog{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="page-header">
+    <div class="container">
+        <h1>Core Resource Hub</h1>
+        <div class="breadcrumb">
+            / <span>Blog</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BLOG FILTER SECTION ===== -->
+<section class="blog-filter">
+    <div class="container">
+
+        <h2 class="page-title">Core Resources Blog</h2>
+
+        <form class="filter-form">
+
+            <div class="filter-grid">
+
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select>
+                        <option>Select an Option...</option>
+                        <option>Web Development</option>
+                        <option>Accessibility</option>
+                        <option>Design</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Year</label>
+                    <select>
+                        <option>Select an Option...</option>
+                        <option>2026</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Author</label>
+                    <select>
+                        <option>Select an Option...</option>
+                        <option>Admin</option>
+                        <option>Editor</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Tags</label>
+                    <select>
+                        <option>Select an Option...</option>
+                        <option>WCAG</option>
+                        <option>CMS</option>
+                        <option>UI/UX</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="filter-buttons">
+                <button type="submit" class="btn-search">Search</button>
+                <button type="reset" class="btn-reset">Reset</button>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

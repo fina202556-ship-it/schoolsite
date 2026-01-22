@@ -1,0 +1,178 @@
+{% extends "main/base.html" %}
+
+{% block title %}Academics{% endblock %}
+
+{% block content %}
+
+<style>
+.academics-hero {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url('https://via.placeholder.com/1200x400') center/cover;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.academics-hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.academics-hero p {
+    font-size: 18px;
+}
+
+.academic-section {
+    margin-top: 50px;
+}
+
+.academic-section h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.academic-section p {
+    text-align: center;
+    color: #666;
+    max-width: 700px;
+    margin: auto;
+}
+
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.academic-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.academic-card:hover {
+    transform: translateY(-6px);
+}
+
+.academic-card h3 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.academic-card p, .academic-card li {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.academic-card ul {
+    padding-left: 20px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #003366;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.learn-more-btn:hover {
+    background: #002244;
+}
+</style>
+
+<section class="page-section">
+
+    <!-- Hero Section -->
+    <div class="academics-hero">
+        <h2>Our Academic Programs</h2>
+        <p>Providing quality education with modern learning methods.</p>
+    </div>
+
+    <!-- Programs Section -->
+    <div class="academic-section">
+        <h2>Programs Offered</h2>
+        <p>We offer a variety of programs designed to prepare students for future success.</p>
+
+        <div class="academic-grid">
+
+            <div class="academic-card">
+                <h3>Computer Science</h3>
+                <p>Learn programming, web development, AI, and data science.</p>
+                <ul>
+                    <li>Python, Java, C++</li>
+                    <li>Web Development</li>
+                    <li>AI & Machine Learning</li>
+                </ul>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <div class="academic-card">
+                <h3>Information Technology</h3>
+                <p>Focus on networking, cybersecurity, and system administration.</p>
+                <ul>
+                    <li>Networking</li>
+                    <li>Cyber Security</li>
+                    <li>Cloud Computing</li>
+                </ul>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <div class="academic-card">
+                <h3>Business Management</h3>
+                <p>Develop leadership, marketing, and entrepreneurship skills.</p>
+                <ul>
+                    <li>Marketing</li>
+                    <li>Finance</li>
+                    <li>Entrepreneurship</li>
+                </ul>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Teaching Methodology -->
+    <div class="academic-section">
+        <h2>Our Teaching Approach</h2>
+        <p>We combine theory with practical learning to ensure student success.</p>
+
+        <div class="academic-grid">
+
+            <div class="academic-card">
+                <h3>Interactive Classes</h3>
+                <p>Engaging and student-centered learning environment.</p>
+            </div>
+
+            <div class="academic-card">
+                <h3>Project-Based Learning</h3>
+                <p>Hands-on projects that reflect real-world challenges.</p>
+            </div>
+
+            <div class="academic-card">
+                <h3>Experienced Faculty</h3>
+                <p>Learn from highly qualified and professional instructors.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="academic-section" style="text-align:center;">
+        <h2>Start Your Academic Journey</h2>
+        <p>Explore our programs and apply today.</p>
+        <a href="/admissions/" class="learn-more-btn">Apply Now</a>
+    </div>
+
+</section>
+
+{% endblock %}

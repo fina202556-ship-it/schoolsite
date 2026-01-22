@@ -1,0 +1,74 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Courses{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section id="courses-hero">
+    <h2>Our Courses</h2>
+    <p>
+        Explore a variety of industry-focused IT courses designed to build
+        your skills and enhance your career prospects.
+    </p>
+    <div class="btn">
+        <a href="javascript:void(0);" class="blue" id="learn-more-courses-btn">Learn More</a>
+    </div>
+</section>
+
+<!-- ================= LEARN MORE ================= -->
+<section id="learn-more-courses" class="box" style="display:none;">
+    <h2>Why Choose Our Courses?</h2>
+    <p>
+        Himalayan IT College courses are practical, hands-on, and led by
+        experienced instructors to ensure you gain real-world skills.
+    </p>
+    <ul>
+        <li>Web Development & Programming</li>
+        <li>Data Science & AI</li>
+        <li>Networking & Cybersecurity</li>
+        <li>Cloud Computing & DevOps</li>
+        <li>Soft Skills & Career Preparation</li>
+    </ul>
+</section>
+
+<!-- ================= COURSE FEATURES ================= -->
+<section class="features">
+    <div class="feature-box">
+        <i class="fa-solid fa-code"></i>
+        <h3>Practical Projects</h3>
+        <p>Hands-on projects to enhance real-world experience.</p>
+    </div>
+
+    <div class="feature-box">
+        <i class="fa-solid fa-chalkboard-teacher"></i>
+        <h3>Expert Instructors</h3>
+        <p>Learn from certified and experienced professionals.</p>
+    </div>
+
+    <div class="feature-box">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Global Recognition</h3>
+        <p>Certificates recognized internationally.</p>
+    </div>
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+document.getElementById('learn-more-courses-btn').addEventListener('click', function(){
+    const section = document.getElementById('learn-more-courses');
+    if(section.style.display === 'none'){
+        section.style.display = 'block';
+        section.scrollIntoView({behavior: "smooth"});
+    } else {
+        section.style.display = 'none';
+    }
+});
+</script>
+
+{% endblock %}
