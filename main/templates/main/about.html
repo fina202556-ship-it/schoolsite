@@ -1,0 +1,103 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section id="about-home">
+    <h2>About TechEduca College</h2>
+    <p>Empowering students with cutting-edge IT skills and hands-on learning experience.</p>
+</section>
+
+<section id="about-container">
+
+    <div class="about-box box">
+        <img src="{% static 'img/a1.jpg' %}" alt="">
+        <div class="about-text">
+            <h3>Our Mission</h3>
+            <p>To provide practical IT education and prepare students for real-world tech challenges.</p>
+        </div>
+    </div>
+
+    <div class="about-box box">
+        <img src="{% static 'img/a2.jpg' %}" alt="">
+        <div class="about-text">
+            <h3>Our Vision</h3>
+            <p>To become the leading IT education hub in Asia, nurturing talent and innovation.</p>
+        </div>
+    </div>
+
+    <div class="about-box box">
+        <img src="{% static 'img/a3.jpg' %}" alt="">
+        <div class="about-text">
+            <h3>Our Community</h3>
+            <p>We foster a collaborative learning environment where students thrive and grow together.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Achievements Section -->
+<section id="achievements">
+    <h2>Achievements</h2>
+    <div class="achievement-boxes">
+
+        <div class="achievement box">
+            <button class="achievement-btn">500+ Graduates</button>
+            <div class="achievement-content">
+                <p>
+                    Successfully placed in top IT companies worldwide. Our alumni are working in top
+                    companies such as Google, Microsoft, and Amazon. We ensure practical skills and
+                    hands-on training to make students industry-ready.
+                </p>
+            </div>
+        </div>
+
+        <div class="achievement box">
+            <button class="achievement-btn">100+ Projects</button>
+            <div class="achievement-content">
+                <p>
+                    Completed hands-on projects showcasing practical skills. Students have built
+                    real applications in Web Development, Python, AI, Data Science, and Mobile Apps,
+                    demonstrating problem-solving and coding expertise.
+                </p>
+            </div>
+        </div>
+
+        <div class="achievement box">
+            <button class="achievement-btn">50+ Industry Partners</button>
+            <div class="achievement-content">
+                <p>
+                    Collaborating with top tech companies for internships and placements. Our partners
+                    provide mentorship, live projects, and placement opportunities to ensure career
+                    growth for students.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+// Expand/collapse achievement content
+const buttons = document.querySelectorAll('.achievement-btn');
+buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        if(content.style.maxHeight){
+            content.style.maxHeight = null;
+            btn.classList.remove('active');
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            btn.classList.add('active');
+        }
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section id="about-home">
+    <h2>Contact TechEduca College</h2>
+    <p>We are here to help you! Reach out to us anytime.</p>
+</section>
+
+<section id="contact-container">
+
+    <div class="contact-info box">
+        <h3>Headquarters</h3>
+        <p>744 New York Ave, Brooklyn, New York, USA</p>
+
+        <h3>Phone</h3>
+        <p>(+1) 98671 23456</p>
+
+        <h3>Email</h3>
+        <p>info@techeduca.com</p>
+
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+    </div>
+
+    <div class="contact-form box">
+        <h3>Send a Message</h3>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name">
+            <input type="email" name="email" placeholder="Your Email">
+            <input type="text" name="subject" placeholder="Subject">
+            <textarea name="message" placeholder="Your Message" rows="6"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</section>
+
+<section id="map" class="box">
+    <iframe src="https://maps.app.goo.gl/HBv4gQPJ2NcGK29AA"
+            style="width:100%;height:350px;border:0;"
+            allowfullscreen=""
+            loading="lazy">
+    </iframe>
+</section>
+
+{% endblock %}
